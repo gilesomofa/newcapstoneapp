@@ -1,12 +1,12 @@
 import { FETCH_STUDENTS, NEW_STUDENT } from './types';
 
-export const fetchPosts = () => dispatch => {
+export const fetchStudents = () => dispatch => {
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
-    .then(posts =>
+    .then(students =>
       dispatch({
-        type: FETCH_POSTS,
-        payload: posts
+        type: FETCH_STUDENTS,
+        payload: students
       })
     );
 };
@@ -20,10 +20,10 @@ export const createStudent = studentData => dispatch => {
     body: JSON.stringify(studentData)
   })
     .then(res => res.json())
-    .then(post =>
+    .then(student =>
       dispatch({
         type: NEW_STUDENT,
-        payload: post
+        payload: student
       })
     );
 };

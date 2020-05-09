@@ -8,13 +8,19 @@ componentWillMount() {
 this.props.fetchStudents();
 }
 
+componentWillReceiveProps(nextProps) {
+    if (nextProps.newstudent) {
+      this.props.students.unshift(nextProps.newStudent);
+    }
+  };
+
 render() {
 const studentItems = this.props.students.map(student => (
 <div key={student.id}>
 <h3>{student.name}</h3>
 {/* another jsx element here for behavior drop down */}
 </div>
-))
+));
 return (
 <div>
 {<h1>Students</h1>}
@@ -24,12 +30,15 @@ return (
 }
 }
 Students.propTypes= {
-fetchStudents:PropTypes.func.isRequired ,
-students:PropTypes.array.isRequired
-}
+fetchStudents: PropTypes.func.isRequired,
+students: PropTypes.array.isRequired,
+newStudent: PropTypes.object
+};
 
 
 const mapStateToProps = state =>({
-students:state.students.items
+students:state.students.items,
+newStudent:state.students.item
+
 });
 export default connect(mapStateToProps, { fetchStudents })(Students)

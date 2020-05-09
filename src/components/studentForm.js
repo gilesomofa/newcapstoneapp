@@ -4,67 +4,67 @@ import { connect } from 'react-redux';
 import { createStudent } from '../actions/studentActions';
 
 class StudentForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      body: ''
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: '',
+            name: ''
+        };
 
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+    }
 
-  onSubmit(e) {
-    e.preventDefault();
+    onSubmit(e) {
+        e.preventDefault();
 
-    const student = {
-      title: this.state.title,
-      body: this.state.body
-    };
+        const student = {
+            id: this.state.id,
+            name: this.state.name
+        };
 
-    this.props.createStudent(student);
-  }
+        this.props.createStudent(student);
+    }
 
-  render() {
-    return (
-      <div>
-        <h1>Add Student</h1>
-        <form onSubmit={this.onSubmit}>
-          <div>
-            <label>Title: </label>
-            <br />
-            <input
-              type="text"
-              name="title"
-              onChange={this.onChange}
-              value={this.state.title}
-            />
-          </div>
-          <br />
-          <div>
-            <label>Body: </label>
-            <br />
-            <textarea
-              name="body"
-              onChange={this.onChange}
-              value={this.state.body}
-            />
-          </div>
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <h1>Add Student</h1>
+                <form onSubmit={this.onSubmit}>
+                    <div>
+                        <label>Student Id: </label>
+                        <br />
+                        <input
+                            type="text"
+                            name="id"
+                            onChange={this.onChange}
+                            value={this.state.id}
+                        />
+                    </div>
+                    <br />
+                    <div>
+                        <label>Student Name: </label>
+                        <br />
+                        <textarea
+                            name="name"
+                            onChange={this.onChange}
+                            value={this.state.name}
+                        />
+                    </div>
+                    <br />
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        );
+    }
 }
 
 StudentForm.propTypes = {
-  createPost: PropTypes.func.isRequired
+    createStudent: PropTypes.func.isRequired
 };
 
 export default connect(null, { createStudent })(StudentForm);
