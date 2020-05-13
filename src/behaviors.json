@@ -1,0 +1,46 @@
+{
+  "nonPreferredBehaviors": {
+    "antecedent": [
+      "Other student given attention",
+      "Non-preferred activity",
+      "Preferred activity interupted",
+      "Difficult Problem or material"
+    ],
+    "name": [
+      "Hitting",
+      "Kicking",
+      "Not Sharing Materials",
+      "Leaving assigned area"
+    ],
+    "consequence": [
+      "Student ignored",
+      "Student redirected",
+      "Student lost priviledge",
+      "Teacher communicated with parent"
+    ],
+    "comment": "",
+    "time": "Date.now",
+    "selected": "false",
+    "key": "nonPreferredBehavior"
+  },
+
+  "preferredBehaviors": {
+    "antecedent": [],
+    "name": [
+      "On task",
+      "Sharing materials",
+      "Kind and respectful communication",
+      "Body is calm"
+    ],
+    "consequence": [
+      "Student ignored",
+      "Student redirected",
+      "Student lost priviledge",
+      "Teacher communicated with parent"
+    ],
+    "comment": "",
+    "time": "Date.now",
+    "selected": "false",
+    "key": "preferredBehavior"
+  }
+}
