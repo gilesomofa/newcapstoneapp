@@ -6,7 +6,6 @@ import { fetchStudents } from "../actions/studentActions";
 class Students extends Component {
   componentWillMount() {
     this.props.fetchStudents();
-    this.props.createBehavior();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -35,8 +34,6 @@ Students.propTypes = {
   fetchStudents: PropTypes.func.isRequired,
   students: PropTypes.array.isRequired,
   newStudent: PropTypes.object,
-  createBehavior: PropTypes.func.isRequired,
-  newBehavior: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({

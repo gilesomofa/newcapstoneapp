@@ -1,29 +1,29 @@
-import { FETCH_STUDENTS, NEW_STUDENT } from './types';
+import { FETCH_STUDENTS, NEW_STUDENT } from "./types";
 
-export const fetchStudents = () => dispatch => {
-  fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
-    .then(students =>
+export const fetchStudents = () => (dispatch) => {
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => res.json())
+    .then((students) =>
       dispatch({
         type: FETCH_STUDENTS,
-        payload: students
+        payload: students,
       })
     );
 };
 
-export const createStudent = studentData => dispatch => {
-  fetch('https://jsonplaceholder.typicode.com/users', {
-    method: 'POST',
+export const createStudent = (studentData) => (dispatch) => {
+  fetch("https://jsonplaceholder.typicode.com/users", {
+    method: "POST",
     headers: {
-      'content-type': 'application/json'
+      "content-type": "application/json",
     },
-    body: JSON.stringify(studentData)
+    body: JSON.stringify(studentData),
   })
-    .then(res => res.json())
-    .then(student =>
+    .then((res) => res.json())
+    .then((student) =>
       dispatch({
         type: NEW_STUDENT,
-        payload: student
+        payload: student,
       })
     );
 };
