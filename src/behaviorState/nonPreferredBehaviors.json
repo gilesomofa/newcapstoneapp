@@ -1,26 +1,7 @@
-{
-  "nonPreferredBehaviors": {
-    "antecedent": [
-      "Other student given attention",
-      "Non-preferred activity",
-      "Preferred activity interupted",
-      "Difficult Problem or material"
-    ],
-    "name": [
-      "Hitting",
-      "Kicking",
-      "Not Sharing Materials",
-      "Leaving assigned area"
-    ],
-    "consequence": [
-      "Student ignored",
-      "Student redirected",
-      "Student lost priviledge",
-      "Teacher communicated with parent"
-    ],
-    "comment": "",
-    "time": "Date.now",
-    "selected": "false",
-    "key": "nonPreferredBehavior"
-  }
-}
+[
+  { "id": "1", "name": "Kicking", "type": "non-preferred" },
+  { "id": "2", "name": "Hitting", "type": "non-preferred" },
+  { "id": "3", "name": "Off task", "type": "non-preferred" },
+  { "id": "4", "name": "Not sharing materials", "type": "non-preferred" },
+  { "id": "5", "name": "Inappropriate voice level", "type": "non-preferred" }
+]

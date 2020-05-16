@@ -4,7 +4,8 @@ import { Provider } from "react-redux";
 import Students from "./components/Students";
 import StudentForm from "./components/StudentForm";
 import store from "./store";
-import NonPreferredBehaviors from "./components/NonPreferredBehaviors";
+import NonPreferredBehaviors from "./components/Behaviors";
+import Behaviors from "./components/Behaviors";
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
           <StudentForm />
           <hr />
           <Students />
-          <NonPreferredBehaviors />
+          <Behaviors />
         </div>
       </Provider>
     );

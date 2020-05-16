@@ -5,7 +5,7 @@ import {
   FETCH_PREFERREDBEHAVIOR,
 } from "./types";
 
-export const getNonPreferredBehavior = () => (dispatch) => {
+export const getNonPreferredBehaviors = () => (dispatch) => {
   fetch("./behaviorState/nonPreferredBehaviors.json")
     .then((res) => res.json())
     .then((nonPreferredBehaviors) =>
@@ -28,6 +28,7 @@ export const getPreferredBehavior = () => (dispatch) => {
 export const createNonPreferredBehavior = (nonPreferredBehaviorData) => (
   dispatch
 ) => {
+  console.log("getting behaviors");
   fetch("./behaviorState/nonPreferredBehaviors.json", {
     method: "POST",
     headers: {

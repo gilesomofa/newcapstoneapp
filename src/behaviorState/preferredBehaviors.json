@@ -1,26 +1,11 @@
-{
-  "preferredBehaviors": {
-    "antecedent": [
-      "Other student given attention",
-      "Non-preferred activity",
-      "Preferred activity interupted",
-      "Difficult Problem or material"
-    ],
-    "name": [
-      "On task",
-      "Sharing materials",
-      "Kind and respectful communication",
-      "Body is calm"
-    ],
-    "consequence": [
-      "Student ignored",
-      "Student redirected",
-      "Student lost priviledge",
-      "Teacher communicated with parent"
-    ],
-    "comment": "",
-    "time": "Date.now",
-    "selected": "false",
-    "key": "preferredBehavior"
-  }
-}
+[
+  { "id": "1", "name": "Safe hands", "type": "preferred" },
+  { "id": "2", "name": "Using materials safely", "type": "preferred" },
+  { "id": "3", "name": "On task", "type": "preferred" },
+  {
+    "id": "4",
+    "name": "Helping teacher and or classmates",
+    "type": "preferred"
+  },
+  { "id": "5", "name": "Engaged in lesson", "type": "preferred" }
+]
