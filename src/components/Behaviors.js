@@ -23,72 +23,17 @@ class Behaviors extends React.Component {
     console.log("hello");
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label> Select Preferred behaviors </label>
-          {preferredBehaviors.map((behavior) => (
-            
-            <input type="checkbox" id = { preferredBehaviors.id } name = { preferredBehaviors.name }  
-            value = { preferredBehaviors.name }
-              <label for = "name">{preferredBehaviors.name}</label>
-
-            >
-             
-            </input>
-          ))}
-        </form>
-        <br />
-        <br />
-        <form>
-          <label> Select Non referred behaviors </label>
-          <select>
-            {nonPreferredBehaviors.map((behavior) => (
-              <option
-                key={nonPreferredBehaviors.id}
-                value={nonPreferredBehaviors.name}
-              ></option>
-            ))}
-          </select>
-        </form>
-      </div>
+      <form>
+        <h3 className="Preferred Behavior">Select Peferred Behavior</h3>
+        <p>Preferred Behaviors</p>
+        <input type="text" onChange={this.handleChange} />
+        <h3 className="Non Preferred Behavior">
+          Select Non Preferred Behavior
+        </h3>
+        <p>Non Preferred Behaviors</p>
+      </form>
     );
   }
 }
+
 export default Behaviors;
-
-// import { getNonPreferredBehaviors } from "../actions/behaviorActions";
-// import { createNonPreferredBehavior } from "../actions/behaviorActions";
-
-// class NonPreferredBehaviors extends Component {
-//   componentWillMount() {
-//     this.props.getNonPreferredBehaviors();
-//     // this.props.createNonPreferredBehavior();
-//   }
-
-//   componentWillReceiveProps(nextProps) {
-//     if (nextProps.createNonPreferredBehavior) {
-//       this.props.nonPreferredBehaviors.unshift(
-//         nextProps.createNonPreferredBehavior
-//       );
-//     }
-// }
-
-// }
-// NonPreferredBehaviors.propTypes = {
-//   getNonPreferredBehaviors: PropTypes.func.isRequired,
-//   nonPreferredBehaviors: PropTypes.array.isRequired,
-//   createNonPreferredBehavior: PropTypes.func.isRequired,
-// };
-
-// const mapStateToProps = (state) => ({
-//   nonPreferredBehaviors: state.nonPreferredBehaviors.items,
-//   createNonPreferredBehaviors: state.nonPreferredBehaviors.item,
-// });
-// export default connect(mapStateToProps, { getNonPreferredBehaviors })(
-//   NonPreferredBehaviors
-// );
-
-// PreferredBehaviors: PropTypes.array.isRequired,
-// createPreferredBehavior: PropTypes.func.isRequired,
-// preferredBehaviors: state.preferredBehaviors.items,
-// createPreferredBehavior: state.behaviors.item,
