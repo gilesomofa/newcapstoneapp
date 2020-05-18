@@ -15,7 +15,7 @@ export const getNonPreferredBehaviors = () => (dispatch) => {
       })
     );
 };
-export const getPreferredBehavior = () => (dispatch) => {
+export const getPreferredBehaviors = () => (dispatch) => {
   fetch("./behaviorState/preferredBehaviors.json")
     .then((res) => res.json())
     .then((preferredBehaviors) =>

@@ -5,7 +5,7 @@ import Students from "./components/Students";
 import StudentForm from "./components/StudentForm";
 import store from "./store";
 import BehaviorForm from "./components/BehaviorForm";
-import Behaviors from "./components/Behaviors";
+import Behaviors from "./components/preferredBehaviors";
 
 class App extends Component {
   render() {

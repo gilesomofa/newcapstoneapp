@@ -1,63 +1,96 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import {
+  createPreferredBehavior,
+  createNonPreferredBehavior,
+} from "../actions/behaviorActions";
 
 const nonPreferredBehaviors = require("../behaviorState/nonPreferredBehaviors.json");
-console.log({ nonPreferredBehaviors });
 const preferredBehaviors = require("../behaviorState/preferredBehaviors.json");
-console.log({ preferredBehaviors });
-const allBehaviors = nonPreferredBehaviors.concat(preferredBehaviors);
-console.log(allBehaviors);
 
-class BehaviorForm extends React.Component {
-  componentWillMount = () => this.props.nonPreferredBehaviors;
-  componentWillMount = () => this.props.preferredBehaviors;
-  componentWillMount = () => this.props.allBehaviors;
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.nonPreferredBehavior) {
-      this.props.nonPreferredBehaviors.unshift(nextProps.nonPreferredBehavior);
-    }
-    if (nextProps.preferredBehavior) {
-      this.props.preferredBehaviors.unshift(nextProps.preferredBehavior);
-    }
-  }
-
+class BehaviorForm extends Component {
   constructor(props) {
     super(props);
-    this.state = [[preferredBehaviors.name, nonPreferredBehaviors.name]];
+    this.state = {
+      id: "",
+      name: "",
+      type: "",
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleCheckboxChange = (changeEvent) => {
-    const { name } = changeEvent.target;
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
-    this.setState((prevState) => ({
-      selectBehaviors: {
-        ...prevState.selectBehaviors,
-        [name]: !prevState.selectBehaviors[name],
-      },
-    }));
-  };
+  onSubmit(e) {
+    e.preventDefault();
 
-  handleSubmit = (event) => {
-    alert("Select a behavior: " + this.state.value);
-    event.preventDefault();
-  };
+    const behavior = {
+      name: this.state.name,
+      type: this.state.type,
+    };
+
+    this.props.createNonPreferredBehavior(behavior);
+    this.props.createPreferredBehavior(behavior);
+  }
+
   render() {
-    console.log("hello");
-
     return (
-      <form>
-        <h3 className="Preferred Behavior">Select Peferred Behavior</h3>
-        <p>Preferred Behaviors</p>
-        <input type="checkbox" onCheck={this.handleCheckboxChange} />
-        <h3 className="Non Preferred Behavior">
-          Select Non Preferred Behavior
-        </h3>
-        <p>Non Preferred Behaviors</p>
-      </form>
+      <div>
+        <h1>Add Preferred Behavior</h1>
+        <form onSubmit={this.onSubmit}>
+          <div>
+            <label>Behavior Name: </label>
+            <br />
+            <input
+              type="text"
+              name="name"
+              onChange={this.onChange}
+              value={this.state.name}
+            />
+            <input
+              type="text"
+              name="type"
+              onChange={this.onChange}
+              value={this.state.type}
+            />
+          </div>
+          <br />
+          <div>
+            <label>Non Preferred Behavior: </label>
+            <br />
+            <input
+              type="text"
+              name="name"
+              onChange={this.onChange}
+              value={this.state.name}
+            />
+            <input
+              type="text"
+              name="type"
+              onChange={this.onChange}
+              value={this.state.type}
+            />
+            />
+          </div>
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     );
   }
 }
 
-export default BehaviorForm;
+BehaviorForm.propTypes = {
+  createNonPreferredBehavior: PropTypes.func.isRequired,
+  createPreferredBehavior: PropTypes.func.isRequired,
+};
+
+export default connect(null, {
+  createNonPreferredBehavior,
+  createPreferredBehavior,
+})(BehaviorForm);
