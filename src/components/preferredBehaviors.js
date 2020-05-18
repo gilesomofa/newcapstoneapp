@@ -20,8 +20,9 @@ class PreferredBehaviors extends React.Component {
     );
     return (
       <div>
-        {<h1>Behvaviors</h1>}
-        {preferredBehaviorItems}
+        {" "}
+        {<h1>Preferred Behaviors</h1>}
+        {preferredBehaviorItems}{" "}
       </div>
     );
   }
@@ -29,13 +30,16 @@ class PreferredBehaviors extends React.Component {
 PreferredBehaviors.propTypes = {
   preferredBehaviors: PropTypes.array.isRequired,
 
-  newPreferredBehavior: PropTypes.object,
+  newPreferredBehaviors: PropTypes.object,
 };
 
-const mapStateToProps = (state) => ({
-  preferredBehaviors: state.behavior.items,
-  newPreferredBehavior: state.behavior.item,
-});
+const mapStateToProps = (state) => {
+  console.log(state, "hello");
+  return {
+    preferredBehaviors: state.behaviors.items,
+    newPreferredBehavior: state.behaviors.item,
+  };
+};
 export default connect(mapStateToProps, {
   preferredBehaviors,
 })(PreferredBehaviors);

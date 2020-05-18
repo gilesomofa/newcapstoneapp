@@ -4,9 +4,10 @@ import {
   NEW_PREFERREDBEHAVIOR,
   NEW_NONPREFERREDBEHAVIOR,
 } from "../actions/types";
+import preferredBehaviors from "../behaviorState/preferredBehaviors.json";
 
 const initialState = {
-  items: [],
+  items: preferredBehaviors,
   item: {},
 };
 
@@ -25,15 +26,10 @@ export default function (state = initialState, action) {
       };
     case NEW_PREFERREDBEHAVIOR:
       console.log("fetching");
-      return {
-        ...state,
-        item: action.payload,
-      };
+      return [...state, action.payload];
+
     case NEW_NONPREFERREDBEHAVIOR:
-      return {
-        ...state,
-        item: action.payload,
-      };
+      return [...state, action.payload];
     default:
       return state;
   }
