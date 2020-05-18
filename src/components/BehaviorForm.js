@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -9,7 +9,7 @@ console.log({ preferredBehaviors });
 const allBehaviors = nonPreferredBehaviors.concat(preferredBehaviors);
 console.log(allBehaviors);
 
-class Behaviors extends React.Component {
+class BehaviorForm extends React.Component {
   componentWillMount = () => this.props.nonPreferredBehaviors;
   componentWillMount = () => this.props.preferredBehaviors;
   componentWillMount = () => this.props.allBehaviors;
@@ -23,13 +23,18 @@ class Behaviors extends React.Component {
     }
   }
 
+  constructor(props) {
+    super(props);
+    this.state = [[preferredBehaviors.name, nonPreferredBehaviors.name]];
+  }
+
   handleCheckboxChange = (changeEvent) => {
     const { name } = changeEvent.target;
 
     this.setState((prevState) => ({
-      allBehaviors: {
-        ...prevState.allBehaviors,
-        [name]: !prevState.allBehaviors[name],
+      selectBehaviors: {
+        ...prevState.selectBehaviors,
+        [name]: !prevState.selectBehaviors[name],
       },
     }));
   };
@@ -38,32 +43,21 @@ class Behaviors extends React.Component {
     alert("Select a behavior: " + this.state.value);
     event.preventDefault();
   };
-
   render() {
-    console.log({ allBehaviors });
-    const behaviorItems = this.props.allBehaviors.map(() => (
-      <div>
-        <input type="checkbox" /> {allBehaviors.name}
-      </div>
-    ));
+    console.log("hello");
 
     return (
-      <div>
-        {<h1>Behaviors</h1>}
-        {behaviorItems}
-      </div>
+      <form>
+        <h3 className="Preferred Behavior">Select Peferred Behavior</h3>
+        <p>Preferred Behaviors</p>
+        <input type="checkbox" onCheck={this.handleCheckboxChange} />
+        <h3 className="Non Preferred Behavior">
+          Select Non Preferred Behavior
+        </h3>
+        <p>Non Preferred Behaviors</p>
+      </form>
     );
   }
 }
-Behaviors.propTypes = {
-  allBehaviors: PropTypes.array.isRequired,
-  newBehavior: PropTypes.object,
-  nonPreferredBehaviors: PropTypes.array.isRequired,
-  preferredBehaviors: PropTypes.array.isRequired,
-};
 
-// const mapStateToProps = (state) => ({
-//   allBehaviors: state.allBehaviors.items,
-//   newBehavior: state.allBehaviors.item,
-// });
-export default connect(null, { allBehaviors })(Behaviors);
+export default BehaviorForm;

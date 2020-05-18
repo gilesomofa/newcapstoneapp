@@ -1,7 +1,32 @@
 [
-  { "id": "1", "name": "Kicking", "type": "non-preferred" },
-  { "id": "2", "name": "Hitting", "type": "non-preferred" },
-  { "id": "3", "name": "Off task", "type": "non-preferred" },
-  { "id": "4", "name": "Not sharing materials", "type": "non-preferred" },
-  { "id": "5", "name": "Inappropriate voice level", "type": "non-preferred" }
+  {
+    "id": "1",
+    "name": "Kicking",
+    "type": "non-preferred",
+    "isSelected": "false"
+  },
+  {
+    "id": "2",
+    "name": "Hitting",
+    "type": "non-preferred",
+    "isSelected": "false"
+  },
+  {
+    "id": "3",
+    "name": "Off task",
+    "type": "non-preferred",
+    "isSelected": "false"
+  },
+  {
+    "id": "4",
+    "name": "Not sharing materials",
+    "type": "non-preferred",
+    "isSelected": "false"
+  },
+  {
+    "id": "5",
+    "name": "Inappropriate voice level",
+    "type": "non-preferred",
+    "isSelected": "false"
+  }
 ]

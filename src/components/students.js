@@ -17,7 +17,9 @@ class Students extends Component {
   render() {
     const studentItems = this.props.students.map((student) => (
       <div key={student.id}>
-        <h3>{student.name}</h3>
+        <h3>
+          {student.id} {student.name}
+        </h3>
 
         {/* another jsx element here for behavior drop down */}
       </div>
