@@ -4,28 +4,24 @@ import {
   NEW_PREFERREDBEHAVIOR,
   NEW_NONPREFERREDBEHAVIOR,
 } from "../actions/types";
-import preferredBehaviors from "../behaviorState/preferredBehaviors.json";
+import nonPreferredBehaviors from "../behaviorState/nonPreferredBehaviors.json";
 
+import preferredBehaviors from "../behaviorState/preferredBehaviors.json";
 const initialState = {
-  items: preferredBehaviors,
+  items: preferredBehaviors || nonPreferredBehaviors,
+  //I need to figure out how to have this by dynamic
+  //where it can set the initialState of both arrays
   item: {},
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case FETCH_PREFERREDBEHAVIOR:
-      return {
-        ...state,
-        items: action.payload,
-      };
     case FETCH_NONPREFERREDBEHAVIOR:
-      console.log("fetching");
-      return {
-        ...state,
-        items: action.payload,
-      };
+      return [...state, action.payload];
+    case FETCH_PREFERREDBEHAVIOR:
+      return [...state, action.payload];
+
     case NEW_PREFERREDBEHAVIOR:
-      console.log("fetching");
       return [...state, action.payload];
 
     case NEW_NONPREFERREDBEHAVIOR:

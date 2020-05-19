@@ -1,41 +1,60 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import  { getNonPreferredBehaviors } from ("../actions/behaviorActions");
-const nonPreferredBehaviors = require("../behaviorState/nonPreferredBehaviors.json");	
+import BehaviorCheckbox from "./BehaviorCheckbox";
+
+const nonPreferredBehaviors = require("../behaviorState/nonPreferredBehaviors.json");
+console.log(state);
 
 class NonPreferredBehaviors extends React.Component {
-  componentWillMount = () => this.props.getNonPreferredBehaviors;
+  constructor(props) {
+    super(props);
+    this.state = {
+      checkedItems: new Map(),
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const item = e.target.name;
+    const isChecked = e.target.isChecked;
+    this.setState((prevState) => ({
+      checkedItems: prevState.checkedItems.set(item, isChecked),
+    }));
+  }
 
   render() {
-    const nonPreferredBehaviorItems = this.props.nonPreferredBehaviors.map(
-      (behavior) => (
-        <div key={behavior.type.id}>
-          <h3>
-            {behavior.type.name} {behavior.name}
-          </h3>
-
-        </div>
-      )
-    );
     return (
-      <div>
-        {<h1>Non Preferred Behaviors</h1>}
-        {nonPreferredBehaviorItems}
-      </div>
+      <React.Fragment>
+        {nonPreferredBehaviors.map((item) => (
+          <label key={item.key}>
+            {item.name}
+            <BehaviorCheckbox
+              name={item.name}
+              checked={this.state.checkedItems.get(item.name)}
+              onChange={this.handleChange}
+            />
+          </label>
+        ))}
+      </React.Fragment>
     );
   }
 }
-Behaviors.propTypes = {
+
+NonPreferredBehaviors.propTypes = {
   nonPreferredBehaviors: PropTypes.array.isRequired,
 
   newNonPreferredBehavior: PropTypes.object,
 };
 
-const mapStateToProps = (state) => ({
-  behaviors: state.behavior.items,
-  newBehavior: state.behavior.item,
-});
+const mapStateToProps = (state) => {
+  console.log(state, "hello nonpreferred");
+  return {
+    nonPreferredBehaviors: state.behaviors.items,
+    newNonPreferredBehavior: state.behaviors.item,
+  };
+};
+
 export default connect(mapStateToProps, {
   nonPreferredBehaviors,
 })(NonPreferredBehaviors);

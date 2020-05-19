@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import BehaviorCheckbox from "./BehaviorCheckbox";
@@ -8,7 +8,6 @@ const preferredBehaviors = require("../behaviorState/preferredBehaviors.json");
 class PreferredBehaviors extends React.Component {
   constructor(props) {
     super(props);
-    // componentWillMount = () => this.props.preferredBehaviors;
     this.state = {
       checkedItems: new Map(),
     };
@@ -22,23 +21,7 @@ class PreferredBehaviors extends React.Component {
       checkedItems: prevState.checkedItems.set(item, isChecked),
     }));
   }
-  //   render() {
-  //     const preferredBehaviorItems = this.props.preferredBehaviors.map(
-  //       (behavior) => (
-  //         <div key={behavior.type.id}>
-  //           <h3>
-  //             {behavior.type.name} {behavior.name}
-  //           </h3>
-  //         </div>
-  //       )
-  //     );
-  //     return (
-  //       <div className="preferredBehaviorsItems">
-  //         {<h1>Preferred Behaviors</h1>}
-  //         <form input="checkbox">{preferredBehaviorItems} </form>
-  //       </div>
-  //     );
-  //   }
+
   render() {
     return (
       <React.Fragment>
