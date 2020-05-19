@@ -9,24 +9,24 @@
     "id": "2",
     "name": "Hitting",
     "type": "non-preferred",
-    "isSelected": "false"
+    "checked": "false"
   },
   {
     "id": "3",
     "name": "Off task",
     "type": "non-preferred",
-    "isSelected": "false"
+    "checked": "false"
   },
   {
     "id": "4",
     "name": "Not sharing materials",
     "type": "non-preferred",
-    "isSelected": "false"
+    "checked": "false"
   },
   {
     "id": "5",
     "name": "Inappropriate voice level",
     "type": "non-preferred",
-    "isSelected": "false"
+    "checked": "false"
   }
 ]

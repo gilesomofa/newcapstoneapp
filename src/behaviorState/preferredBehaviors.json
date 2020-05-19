@@ -3,25 +3,25 @@
     "id": "1",
     "name": "Safe hands",
     "type": "preferred",
-    "isSelected": "false"
+    "checked": "false"
   },
   {
     "id": "2",
     "name": "Using materials safely",
     "type": "preferred",
-    "isSelected": "false"
+    "checked": "false"
   },
   { "id": "3", "name": "On task", "type": "preferred", "isSelected": "false" },
   {
     "id": "4",
     "name": "Helping teacher and or classmates",
     "type": "preferred",
-    "isSelected": "false"
+    "checked": "false"
   },
   {
     "id": "5",
     "name": "Engaged in lesson",
     "type": "preferred",
-    "isSelected": "false"
+    "checked": "false"
   }
 ]
