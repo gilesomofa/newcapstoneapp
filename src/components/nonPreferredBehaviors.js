@@ -25,6 +25,7 @@ class NonPreferredBehaviors extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <h3>Select Non Preferred Behaviors</h3>
         {nonPreferredBehaviors.map((item) => (
           <label key={item.key}>
             {item.name}

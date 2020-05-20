@@ -7,12 +7,15 @@ import store from "./store";
 import BehaviorForm from "./components/BehaviorForm";
 import NonPreferredBehaviors from "./components/nonPreferredBehaviors";
 import PreferredBehaviors from "./components/preferredBehaviors";
-
+import Login from "./components/Login";
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <div className="App">
+          <Login />
+          <hr />
+
           <StudentForm />
           <hr />
           <Students />
