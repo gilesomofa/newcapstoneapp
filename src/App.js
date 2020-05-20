@@ -5,7 +5,8 @@ import Students from "./components/Students";
 import StudentForm from "./components/StudentForm";
 import store from "./store";
 import BehaviorForm from "./components/BehaviorForm";
-import Behaviors from "./components/preferredBehaviors";
+import NonPreferredBehaviors from "./components/nonPreferredBehaviors";
+import PreferredBehaviors from "./components/preferredBehaviors";
 
 class App extends Component {
   render() {
@@ -15,7 +16,10 @@ class App extends Component {
           <StudentForm />
           <hr />
           <Students />
-          <Behaviors />
+          <hr />
+          <PreferredBehaviors />
+          <NonPreferredBehaviors />
+          <hr />
           <BehaviorForm />
         </div>
       </Provider>

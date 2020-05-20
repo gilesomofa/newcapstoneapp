@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import BehaviorCheckbox from "./BehaviorCheckbox";
 
 const nonPreferredBehaviors = require("../behaviorState/nonPreferredBehaviors.json");
-console.log(state);
 
 class NonPreferredBehaviors extends React.Component {
   constructor(props) {

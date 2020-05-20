@@ -25,6 +25,7 @@ class PreferredBehaviors extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <h3>Select Preferred Behavior(s)</h3>
         {preferredBehaviors.map((item) => (
           <label key={item.key}>
             {item.name}

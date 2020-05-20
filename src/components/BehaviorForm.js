@@ -43,43 +43,31 @@ class BehaviorForm extends Component {
       <div>
         <h1>Add Preferred Behavior</h1>
         <form onSubmit={this.onSubmit}>
-          <div>
-            <label>Behavior Name: </label>
-            <br />
-            <input
-              type="text"
-              name="name"
-              onChange={this.onChange}
-              value={this.state.name}
-            />
-            <input
-              type="text"
-              name="type"
-              onChange={this.onChange}
-              value={this.state.type}
-            />
-          </div>
+          <label>Behavior Name: </label>
           <br />
-          <div>
-            <label>Non Preferred Behavior: </label>
-            <br />
-            <input
-              type="text"
-              name="name"
-              onChange={this.onChange}
-              value={this.state.name}
-            />
-            <input
-              type="text"
-              name="type"
-              onChange={this.onChange}
-              value={this.state.type}
-            />
-            />
-          </div>
-          <br />
-          <button type="submit">Submit</button>
+          <input
+            type="text"
+            name="name"
+            onChange={this.onChange}
+            value={this.state.name}
+          />
         </form>
+        <br />
+        <button type="submit">Submit</button>
+
+        <h1>Add Non Preferred Behavior</h1>
+        <form onSubmit={this.onSubmit}>
+          <label>Behavior Name: </label>
+          <br />
+          <input
+            type="text"
+            name="name"
+            onChange={this.onChange}
+            value={this.state.name}
+          />
+        </form>
+        <br />
+        <button type="submit">Submit</button>
       </div>
     );
   }
