@@ -29,7 +29,6 @@ class StudentForm extends Component {
 
     this.props.createStudent(student);
   }
-
   render() {
     return (
       <div>

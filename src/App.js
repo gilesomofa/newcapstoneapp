@@ -8,6 +8,8 @@ import BehaviorForm from "./components/BehaviorForm";
 import NonPreferredBehaviors from "./components/nonPreferredBehaviors";
 import PreferredBehaviors from "./components/preferredBehaviors";
 import Login from "./components/Login";
+
+document.addEventListener("DOM.contentLoaded", function () {});
 class App extends Component {
   render() {
     return (

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchStudents } from "../actions/studentActions";
+import { BottomNavigation } from "@material-ui/core";
 
 class Students extends Component {
   componentWillMount() {
@@ -19,9 +20,9 @@ class Students extends Component {
       <div key={student.id}>
         <h3>
           {student.id} {student.name}
+          <button className="Behavior-Button">Add Pref. Beh.</button>{" "}
+          <button>Add Non. Pref. Beh.</button>
         </h3>
-
-        {/* another jsx element here for behavior drop down */}
       </div>
     ));
     return (
