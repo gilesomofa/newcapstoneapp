@@ -3,9 +3,11 @@ import { Redirect } from "react-router";
 import { TextField, Button, Container } from "@material-ui/core";
 
 const initialState = {
-  username: "",
+  first_name: "",
+  last_name: "",
   email: "",
   password: "",
+  pin: "",
   usernameError: "",
   emailError: "",
   passwordError: "",
@@ -23,31 +25,27 @@ class Login extends Component {
   };
 
   validate = () => {
-    let usernameError = "";
-    let emailError = "";
-    //let passwordError = "";
-
-    if (!this.state.username) {
-      usernameError = "name cannot be blank";
-    }
+    let emailErr = "";
+    let passwordError = "";
 
     if (!this.state.email.includes("@")) {
-      emailError = "invalid email";
+      emailErr = "invalid email";
+      console.log("invalid email");
     }
 
     if (!this.state.password) {
-      usernameError = "password cannot be blank";
+      passwordError = "password cannot be blank";
     }
 
-    if (usernameError || emailError) {
-      this.setState({ usernameError, emailError });
+    if (passwordError || emailErr) {
+      this.setState({ passwordError, emailErr });
       return false;
     }
 
     return true;
   };
 
-  handleSubmit = (event) => {
+  login = (event) => {
     event.preventDefault();
     const isValid = this.validate();
     if (isValid) {
@@ -58,7 +56,7 @@ class Login extends Component {
     document.cookie = `loggedIn=true;max-age=60*20000`;
     // set loggedIn = true and max-age = 60*20000 (twenty minutes)
 
-    window.location.replace("/Students");
+    window.location.replace("/Admin");
   };
 
   render() {
@@ -69,14 +67,21 @@ class Login extends Component {
             <TextField
               required
               onChange={this.handleTextChange}
-              value={this.state.username}
-              name="username"
-              placeholder="Username"
+              value={this.state.first_name}
+              name="first_name"
+              placeholder="First Name"
               type="text"
             />
-            <div style={{ fontSize: 12, color: "red" }}>
-              {this.state.usernameError}
-            </div>
+            <div style={{ fontSize: 12, color: "red" }}></div>
+            <TextField
+              required
+              onChange={this.handleTextChange}
+              value={this.state.last_name}
+              name="last_name"
+              placeholder="Last Name"
+              type="text"
+            />
+            <div style={{ fontSize: 12, color: "red" }}></div>
             <TextField
               required
               onChange={this.handleTextChange}
@@ -100,6 +105,15 @@ class Login extends Component {
               {" "}
               {this.state.passwordError}
             </div>
+            <TextField
+              required
+              onChange={this.handleTextChange}
+              value={this.state.pin}
+              name="pin"
+              placeholder="Pin"
+              type="text"
+            />
+            <div style={{ fontSize: 12, color: "red" }}></div>
 
             <Button type="submit" className="login-button" variant="contained">
               Login

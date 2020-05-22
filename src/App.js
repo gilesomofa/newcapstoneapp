@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Provider } from "react-redux";
-import Students from "./components/Students";
-import StudentForm from "./components/StudentForm";
 import store from "./store";
-import BehaviorForm from "./components/BehaviorForm";
 import NonPreferredBehaviors from "./components/nonPreferredBehaviors";
 import PreferredBehaviors from "./components/preferredBehaviors";
 import Login from "./components/Login";
+import BehaviorModal from "./components/BehaviorModal";
+import Router from "./Router";
+import { BrowserRouter } from "react-router-dom";
 
 document.addEventListener("DOM.contentLoaded", function () {});
 class App extends Component {
@@ -15,16 +15,9 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <Login />
-          <hr />
-
-          <StudentForm />
-          <hr />
-          <Students />
-          <hr />
-          <NonPreferredBehaviors />
-          <hr />
-          <BehaviorForm />
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
         </div>
       </Provider>
     );

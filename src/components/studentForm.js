@@ -31,7 +31,7 @@ class StudentForm extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="StudentForm">
         <h1>Add Student</h1>
         <form onSubmit={this.onSubmit}>
           <div>

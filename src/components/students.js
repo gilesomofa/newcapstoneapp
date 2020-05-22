@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchStudents } from "../actions/studentActions";
+import BehaviorModal from "./BehaviorModal";
 
 class Students extends Component {
   componentWillMount() {
@@ -16,15 +17,14 @@ class Students extends Component {
 
   render() {
     const studentItems = this.props.students.map((student) => (
-      <div key={student.id}>
-        <h3>
-          {student.id} {student.name}
-          <button className="Behavior-Button">Monitor Behavior</button>{" "}
-        </h3>
-      </div>
+      <ul key={student.id} className="Student-List">
+        <li> {student.id} </li>
+        <li> {student.name} </li>
+        <BehaviorModal id={student.id} name={student.name} />
+      </ul>
     ));
     return (
-      <div>
+      <div className="Student-Container">
         {<h1>Students</h1>}
         {studentItems}
       </div>

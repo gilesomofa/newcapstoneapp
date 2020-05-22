@@ -41,7 +41,7 @@ class BehaviorForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="BehaviorForm">
         <h1>Add Preferred Behavior</h1>
         <form onSubmit={this.onSubmit}>
           <label>Behavior Name: </label>
