@@ -4,12 +4,12 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const studentRoutes = require("./routes/studentRoutes");
-const behaviorRoutes = require("./routes/behaviorRoutes");
+// const studentRoutes = require("./src/server/routes");
+// const behaviorRoutes = require("./src/server/routes");
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 
-app.listen(proceSS.env.PORT, () => console.log("app is running"));
+app.listen(port, () => console.log("app is running"));

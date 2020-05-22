@@ -20,8 +20,10 @@ class Students extends Component {
       <div key={student.id}>
         <h3>
           {student.id} {student.name}
-          <button className="Behavior-Button">Add Pref. Beh.</button>{" "}
-          <button>Add Non. Pref. Beh.</button>
+          <button className="Behavior-Button">Select Pref. Beh.</button>{" "}
+          <button>Select Non. Pref. Beh.</button>
+          //import component button that brings in non pref, pref, // behavior
+          form
         </h3>
       </div>
     ));
