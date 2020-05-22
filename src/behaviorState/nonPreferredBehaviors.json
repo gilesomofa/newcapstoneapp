@@ -2,31 +2,26 @@
   {
     "id": "1",
     "name": "Kicking",
-    "type": "non-preferred",
-    "isSelected": "false"
+    "type": "non-preferred"
   },
   {
     "id": "2",
     "name": "Hitting",
-    "type": "non-preferred",
-    "checked": "false"
+    "type": "non-preferred"
   },
   {
     "id": "3",
     "name": "Off task",
-    "type": "non-preferred",
-    "checked": "false"
+    "type": "non-preferred"
   },
   {
     "id": "4",
     "name": "Not sharing materials",
-    "type": "non-preferred",
-    "checked": "false"
+    "type": "non-preferred"
   },
   {
     "id": "5",
     "name": "Inappropriate voice level",
-    "type": "non-preferred",
-    "checked": "false"
+    "type": "non-preferred"
   }
 ]

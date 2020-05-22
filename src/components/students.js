@@ -22,8 +22,6 @@ class Students extends Component {
           {student.id} {student.name}
           <button className="Behavior-Button">Select Pref. Beh.</button>{" "}
           <button>Select Non. Pref. Beh.</button>
-          //import component button that brings in non pref, pref, // behavior
-          form
         </h3>
       </div>
     ));

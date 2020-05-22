@@ -40,11 +40,6 @@ class PreferredBehaviors extends React.Component {
     );
   }
 }
-PreferredBehaviors.propTypes = {
-  preferredBehaviors: PropTypes.array.isRequired,
-
-  newPreferredBehaviors: PropTypes.object,
-};
 
 const mapStateToProps = (state) => {
   console.log(state, "hello");

@@ -21,6 +21,7 @@ class BehaviorForm extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+  //place fetch(post) to server router (post) that hooks up to the database
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });

@@ -22,7 +22,6 @@ class App extends Component {
           <hr />
           <Students />
           <hr />
-          <PreferredBehaviors />
           <NonPreferredBehaviors />
           <hr />
           <BehaviorForm />
