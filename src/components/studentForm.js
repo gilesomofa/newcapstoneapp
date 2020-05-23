@@ -33,6 +33,7 @@ class StudentForm extends Component {
     return (
       <div className="StudentForm">
         <h1>Add Student</h1>
+        <hr />
         <form onSubmit={this.onSubmit}>
           <div>
             <label>Student Id: </label>

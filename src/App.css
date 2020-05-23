@@ -4,24 +4,51 @@ body {
   outline: 0;
   box-sizing: border-box;
 }
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/src/images/boys-screaming-3420517.jpg");
+}
+.App-Container {
+  padding-left: 15px;
+}
 
 .StudentForm {
-  background: grey;
+  padding-bottom: 20px;
 }
-.BehaviorForm {
-  background: lightcoral;
+.StudentForm h1 {
+  font-size: 24px;
 }
-/* .Admin-Container {
+.BehaviorForm h1 {
+  font-size: 24px;
+}
+.Admin-Container {
   display: flex;
   flex-direction: row;
-  width: 50%;
-} */
-
+  align-content: flex-end;
+}
+.Admin-Container h1 {
+  font-size: 24px;
+}
 .Student-List {
   list-style: none;
-  width: 50%;
+}
+.Student-List li {
+  padding-bottom: 10px;
 }
 .Student-Container {
-  text-align: right;
-  background: lightskyblue;
+  text-align: left;
+  /* background: lightskyblue; */
+  flex: auto;
+  width: 50%;
+}
+.Form-Container {
+  width: 50%;
+}
+.Student-Container h1 {
+  padding-left: 40px;
+}
+
+.Modal-Button {
+  flex: auto;
 }

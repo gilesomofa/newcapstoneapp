@@ -6,12 +6,15 @@ import BehaviorForm from "./BehaviorForm";
 export default class Admin extends Component {
   render() {
     return (
-      <div className="Admin-Container">
-        <div className="Form-Container">
-          <StudentForm />
-          <BehaviorForm />
+      <div className="App-Container">
+        <div className="Admin-Container">
+          <div className="Form-Container">
+            <StudentForm />
+            <br /> <br /> <br />
+            <BehaviorForm />
+          </div>
+          <Students />
         </div>
-        <Students />
       </div>
     );
   }

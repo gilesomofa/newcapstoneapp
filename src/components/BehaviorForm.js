@@ -55,7 +55,10 @@ class BehaviorForm extends Component {
         </form>
         <br />
         <button type="submit">Submit</button>
-
+        <br />
+        <br />
+        <br />
+        <br />
         <h1>Add Non Preferred Behavior</h1>
         <form onSubmit={this.onSubmit}>
           <label>Behavior Name: </label>

@@ -11,7 +11,7 @@ const BehaviorModal = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <Button color="danger" onClick={toggle} className="Modal-Button">
         Monitor {props.name}'s Behavior
       </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>

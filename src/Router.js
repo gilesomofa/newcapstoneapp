@@ -11,10 +11,6 @@ const Router = () => {
   return (
     <Switch>
       <Route exact path="/" component={Login} />
-      {/* <Route path="/students" component={Students} />
-      <Route path="/studentForm" component={StudentForm} />
-      <Route path="/preferredBehaviors" component={PreferredBehaviors} />
-      <Route path="/nonPreferredBehaviors" component={NonPreferredBehaviors} /> */}
       <Route path="/Admin" component={Admin} />
     </Switch>
   );
