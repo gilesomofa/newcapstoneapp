@@ -17,7 +17,7 @@ export const fetchStudents = () => (dispatch) => {
 };
 
 export const createStudent = (studentData) => (dispatch) => {
-  fetch("https://jsonplaceholder.typicode.com/users", {
+  fetch("http://localhost:5000/students", {
     method: "POST",
     headers: {
       "content-type": "application/json",

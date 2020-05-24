@@ -7,8 +7,9 @@ class StudentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
-      name: "",
+      classroom_id: "",
+      firstname: "",
+      lastname: ""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -21,13 +22,15 @@ class StudentForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-
+    
     const student = {
-      id: this.state.id,
-      name: this.state.name,
+      classroom_id: this.state.classroom_id,
+      student_firstname: this.state.firstname,
+      student_lastname: this.state.lastname
     };
 
     this.props.createStudent(student);
+    console.log(student);
   }
   render() {
     return (
@@ -36,23 +39,32 @@ class StudentForm extends Component {
         <hr />
         <form onSubmit={this.onSubmit}>
           <div>
-            <label>Student Id: </label>
+            <label>Classroom Id: </label>
             <br />
             <input
               type="text"
-              name="id"
+              name="classroom_id"
               onChange={this.onChange}
-              value={this.state.id}
+              value={this.state.classroom_id}
             />
           </div>
           <br />
           <div>
-            <label>Student Name: </label>
+            <label>Student Firstname: </label>
             <br />
             <textarea
-              name="name"
+              name="firstname" 
               onChange={this.onChange}
-              value={this.state.name}
+              value={this.state.firstname}
+            />
+          </div>
+          <div>
+            <label>Student Last Name: </label>
+            <br />
+            <textarea
+              name="lastname" 
+              onChange={this.onChange}
+              value={this.state.lastname}
             />
           </div>
           <br />
