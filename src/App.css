@@ -4,13 +4,53 @@ body {
   outline: 0;
   box-sizing: border-box;
 }
+
 .App {
+  margin: 0 auto;
   height: 100vh;
-  width: 100vw;
-  background-image: url("/src/images/boys-screaming-3420517.jpg");
+  width: 90vw;
+  padding: 2em;
 }
+.Login {
+  background-image: url("../src/images/boys-screaming-3420517.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid pink;
+  height: 100%;
+  width: 100%;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+.Login-Container {
+  background: rgba(255, 255, 240, 0.7);
+  color: black;
+  border-radius: 20px;
+  width: 60px;
+  padding: 2em;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.329);
+  margin-top: 22vh;
+}
+.login-button {
+  margin: 1em 0;
+}
+#login_field {
+  background: rgba(255, 255, 240);
+  margin: 0.3em;
+}
+.MuiContainer-root {
+  /* TAKE NOT THAT THERE IS A !IMPORTANT BELOW TO OVERRIDE MATERIAL UI COMPONENT WITH */
+  width: 35% !important;
+  display: block;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .App-Container {
-  padding-left: 15px;
+  padding-left: 30px;
 }
 
 .StudentForm {
@@ -32,9 +72,15 @@ body {
 }
 .Student-List {
   list-style: none;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .Student-List li {
   padding-bottom: 10px;
+  margin: 0 2em;
 }
 .Student-Container {
   text-align: left;
@@ -51,4 +97,8 @@ body {
 
 .Modal-Button {
   flex: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 200px;
+  height: auto;
 }

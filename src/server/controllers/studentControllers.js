@@ -11,3 +11,11 @@ app.put("/update", (req, res) => {});
 
 //delete
 app.delete("/delete", (req, res) => {});
+
+module.exports = {
+  getAllRecipes,
+  getRecipeById,
+  addRecipe,
+  updateRecipe,
+  deleteRecipe,
+};

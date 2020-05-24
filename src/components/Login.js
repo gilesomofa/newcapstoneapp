@@ -61,10 +61,11 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Container maxWidth="sm">
+      <div className="Login">
+        <Container maxWidth="lg" className="Login-Container">
           <form className="login-form" onSubmit={this.login}>
             <TextField
+              id="login_field"
               required
               onChange={this.handleTextChange}
               value={this.state.first_name}
@@ -74,6 +75,7 @@ class Login extends Component {
             />
             <div style={{ fontSize: 12, color: "red" }}></div>
             <TextField
+              id="login_field"
               required
               onChange={this.handleTextChange}
               value={this.state.last_name}
@@ -83,6 +85,7 @@ class Login extends Component {
             />
             <div style={{ fontSize: 12, color: "red" }}></div>
             <TextField
+              id="login_field"
               required
               onChange={this.handleTextChange}
               value={this.state.email}
@@ -94,6 +97,7 @@ class Login extends Component {
               {this.state.emailError}
             </div>
             <TextField
+              id="login_field"
               required
               onChange={this.handleTextChange}
               value={this.state.password}
@@ -106,6 +110,7 @@ class Login extends Component {
               {this.state.passwordError}
             </div>
             <TextField
+              id="login_field"
               required
               onChange={this.handleTextChange}
               value={this.state.pin}

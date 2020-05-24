@@ -17,13 +17,18 @@ class Students extends Component {
 
   render() {
     const studentItems = this.props.students.map((student) => (
-      <ul key={student.id} className="Student-List">
-        <li>
-          {" "}
-          {student.id} {student.name}{" "}
-        </li>
-        <BehaviorModal id={student.id} name={student.name} />
-      </ul>
+      <div className="StudentCard">
+        <ul key={student.id} className="Student-List">
+          <li>
+            Student Id: {student.id}
+            <br />
+            Student Name: {student.name}
+          </li>
+          <li>
+            <BehaviorModal id={student.id} name={student.name} />
+          </li>
+        </ul>
+      </div>
     ));
     return (
       <div className="Student-Container">
