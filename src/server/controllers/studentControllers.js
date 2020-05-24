@@ -1,21 +1,10 @@
-app.get("/", (req, res) => {});
+const data = require("../../../src/behaviorState/nonPreferredBehaviors.json");
+const pool = require("../sql database/dbconnect");
 
-//create
-app.post("/insert", (req, res) => {});
-
-//read
-app.get("/getAll", (req, res) => {});
-
-//update
-app.put("/update", (req, res) => {});
-
-//delete
-app.delete("/delete", (req, res) => {});
-
-module.exports = {
-  getAllRecipes,
-  getRecipeById,
-  addRecipe,
-  updateRecipe,
-  deleteRecipe,
+const getAllStudents = (req, res) => {
+  pool.query("SELECT * FROM behavior_app_sql_db.students", (err, rows) => {
+    res.json({ rows });
+  });
 };
+
+module.exports = { getAllStudents };

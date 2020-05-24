@@ -8,7 +8,6 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case FETCH_STUDENTS:
-      console.log("fetching");
       return {
         ...state,
         items: action.payload,

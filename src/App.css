@@ -31,7 +31,12 @@ body {
   width: 60px;
   padding: 2em;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.329);
-  margin-top: 22vh;
+  margin-top: 15vh;
+}
+.Login h1 {
+  color: rgba(255, 255, 255, 0.89);
+  text-align: center;
+  margin-top: 30px;
 }
 .login-button {
   margin: 1em 0;

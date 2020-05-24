@@ -1,7 +1,7 @@
 import { FETCH_STUDENTS, NEW_STUDENT } from "./types";
 
 export const fetchStudents = () => (dispatch) => {
-  fetch("https://jsonplaceholder.typicode.com/users")
+  fetch("localhost:5000/")
     .then((res) => res.json())
     .then((students) =>
       dispatch({

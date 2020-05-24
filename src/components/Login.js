@@ -8,9 +8,6 @@ const initialState = {
   email: "",
   password: "",
   pin: "",
-  usernameError: "",
-  emailError: "",
-  passwordError: "",
 };
 class Login extends Component {
   state = initialState;
@@ -25,43 +22,29 @@ class Login extends Component {
   };
 
   validate = () => {
-    let emailErr = "";
-    let passwordError = "";
-
-    if (!this.state.email.includes("@")) {
-      emailErr = "invalid email";
-      console.log("invalid email");
-    }
-
-    if (!this.state.password) {
-      passwordError = "password cannot be blank";
-    }
-
-    if (passwordError || emailErr) {
-      this.setState({ passwordError, emailErr });
+    if (!this.state.email.includes("@") || !this.state.email.includes(".")) {
+      window.alert(`${this.state.email} is an invalid email`);
       return false;
+    } else {
+      return true;
     }
-
-    return true;
   };
 
   login = (event) => {
     event.preventDefault();
-    const isValid = this.validate();
-    if (isValid) {
-      console.log(this.state);
+    if (this.validate()) {
+      window.location.replace("/Admin");
+      document.cookie = `loggedIn=true;max-age=60*20000`;
+      // set loggedIn = true and max-age = 60*20000 (twenty minutes)
       // clear form
-      this.setState(initialState);
     }
-    document.cookie = `loggedIn=true;max-age=60*20000`;
-    // set loggedIn = true and max-age = 60*20000 (twenty minutes)
-
-    window.location.replace("/Admin");
+    this.setState(initialState);
   };
 
   render() {
     return (
       <div className="Login">
+        <h1>Daily Behavior Report Card</h1>
         <Container maxWidth="lg" className="Login-Container">
           <form className="login-form" onSubmit={this.login}>
             <TextField

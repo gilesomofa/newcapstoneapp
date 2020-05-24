@@ -16,6 +16,7 @@ class Students extends Component {
   }
 
   render() {
+    console.log(this.props.students);
     const studentItems = this.props.students.map((student) => (
       <div className="StudentCard">
         <ul key={student.id} className="Student-List">

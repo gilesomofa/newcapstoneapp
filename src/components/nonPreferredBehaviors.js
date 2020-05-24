@@ -16,15 +16,14 @@ class NonPreferredBehaviors extends React.Component {
       behaviors: [],
     };
     this.handleChange = this.handleChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   handleChange(e) {
     //logic for the checkbox that controls state of checkbox
-
     if (e.target.checked === true) {
       this.setState({ behaviors: [...this.state.behaviors, e.target.name] });
     }
-
     //allow for deselecting checkbox and resetting state
 
     if (e.target.checked === false) {
@@ -34,6 +33,10 @@ class NonPreferredBehaviors extends React.Component {
       this.setState({ behaviors: newState });
     }
     console.log(this.state.behaviors);
+  }
+
+  onSubmit() {
+    // this.state;
   }
 
   render() {
