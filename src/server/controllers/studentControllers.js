@@ -3,7 +3,7 @@ const pool = require("../sql database/dbconnect");
 
 const getAllStudents = (req, res) => {
   pool.query("SELECT * FROM behavior_app_sql_db.students", (err, rows) => {
-    res.json({ rows });
+    res.json([...rows]);
   });
 };
 

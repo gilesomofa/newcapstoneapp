@@ -1,7 +1,12 @@
 import { FETCH_STUDENTS, NEW_STUDENT } from "./types";
 
 export const fetchStudents = () => (dispatch) => {
-  fetch("localhost:5000/")
+  fetch("http://localhost:5000/", {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+  })
     .then((res) => res.json())
     .then((students) =>
       dispatch({
