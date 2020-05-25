@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createStudent } from "../actions/studentActions";
+import { fetchStudents } from "../actions/studentActions";
+
 
 class StudentForm extends Component {
   constructor(props) {
@@ -31,6 +33,8 @@ class StudentForm extends Component {
 
     this.props.createStudent(student);
     console.log(student);
+    window.location.reload();
+
   }
   render() {
     return (
@@ -79,4 +83,4 @@ StudentForm.propTypes = {
   createStudent: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createStudent })(StudentForm);
+export default connect(null, {  createStudent })(StudentForm);

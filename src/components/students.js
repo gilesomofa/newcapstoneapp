@@ -14,7 +14,7 @@ class Students extends Component {
       this.props.students.unshift(nextProps.newStudent);
     }
   }
-
+  
   render() {
     console.log(this.props.students);
     let x = Object.entries(this.props.students);
@@ -26,12 +26,12 @@ class Students extends Component {
             Student Id: {student.student_id}
             <br />
             Student Name:{" "}
-            {(student.student_firstname, student.student_lastname)}
+            {(student.student_firstname +  ' '  + student.student_lastname)}
           </li>
           <li>
             <BehaviorModal
               id={student.student_id}
-              name={student.student_firstname + student.student_lastname}
+              name={student.student_firstname +  ' '  + student.student_lastname}
             />
           </li>
         </ul>
