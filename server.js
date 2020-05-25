@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 dotenv.config();
 const getStudentsRouter = require("./src/server/routes/index");
+const teachersRouter = require("./src/server/routes/teacherRoutes");
+
 const cors = require("cors");
 
 const app = express();
@@ -21,6 +23,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 app.use(express.json());
-app.use("/", getStudentsRouter);
+app.use("/admin", getStudentsRouter);
+app.use("/", teachersRouter);
 
 app.listen(port, () => console.log(`${port} app is running`));

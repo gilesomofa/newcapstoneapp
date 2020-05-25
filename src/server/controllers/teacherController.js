@@ -1,34 +1,44 @@
-const mysql = require("sql database");
-const pool = require("../sql/connection");
-const { handleDBError } = require("../sqldatabase/dberrors");
+const pool = require("../sql database/dbconnect");
 
-const getAllRecipes = (req, res) => {
-  pool.query("SELECT * FROM RECIPE_DATA", (err, rows) => {
-    if (err) return handleSQLError(res, err);
-    return res.json(rows);
-  });
+const signUp = (req, res) => {
+  // res.json({signupcranked:req.body});
+  const {
+    teacher_id,
+    teacher_pin,
+    teacher_firstname,
+    teacher_lastname,
+    teacher_email,
+    teacher_password
+  } = req.body;
+
+  pool.query(
+    "INSERT INTO behavior_app_sql_db.teachers (teacher_pin, teacher_firstname, teacher_lastname, teacher_email, teacher_password) VALUES (" +
+      teacher_pin +
+      " , '" +
+      teacher_firstname +
+      "', '" +
+      teacher_lastname +
+      "' , '" +
+      teacher_email +
+      "', '" + teacher_password + "')",
+    (err, rows) => {
+      res.json({user:rows.insertId});
+    }
+  );
 };
 
-app.get("/", (req, res) => {});
+const login = (req, res) => {
+  // res.json({ loginworks: req.body });
+  const {
+    teacher_email,
+    teacher_pin,
+    teacher_password
+  } = req.body;
 
-//create
-app.post("/insert", (req, res) => {});
-
-//read
-app.get("/getAll", (req, res) => {});
-
-//update
-app.put("/update", (req, res) => {});
-
-//delete
-app.delete("/delete", (req, res) => {});
-
-module.exports = {
-  getAllTeachers,
-  getTeacherById,
-  getTeacherByBehaviorId,
-  getTeacherByClassroomId,
-  addTeacher,
-  updateTeacher,
-  deleteTeacher,
+pool.query("SELECT * FROM teachers WHERE teacher_email = '" + teacher_email + "'  AND teacher_pin = '" + teacher_pin + "'",(err, rows) => {
+  res.send(rows[0]);
+} 
+);
 };
+
+module.exports = { signUp, login };

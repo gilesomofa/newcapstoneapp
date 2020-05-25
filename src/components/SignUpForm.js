@@ -9,7 +9,7 @@ const initialState = {
   password: "",
   pin: "",
 };
-class Login extends Component {
+class SignUp extends Component {
   state = initialState;
 
   handleTextChange = (event) => {
@@ -30,15 +30,13 @@ class Login extends Component {
     }
   };
 
-  login = (event) => {
+  SignUp = (event) => {
     event.preventDefault();
     if (this.validate()) {
-      window.location.replace("/Admin");
-      document.cookie = `loggedIn=true;max-age=60*20000`;
-      // set loggedIn = true and max-age = 60*20000 (twenty minutes)
+      window.location.replace("/");
+      console.log(this.validate);
       // clear form
     }
-    this.setState(initialState);
   };
 
   render() {
@@ -46,8 +44,27 @@ class Login extends Component {
       <div className="Login">
         <h1>Daily Behavior Report Card</h1>
         <Container maxWidth="lg" className="Login-Container">
-          <form className="login-form" onSubmit={this.login}>
-            
+          <form className="login-form" onSubmit={this.SignUp}>
+            <TextField
+              id="login_field"
+              required
+              onChange={this.handleTextChange}
+              value={this.state.first_name}
+              name="first_name"
+              placeholder="First Name"
+              type="text"
+            />
+            <div style={{ fontSize: 12, color: "red" }}></div>
+            <TextField
+              id="login_field"
+              required
+              onChange={this.handleTextChange}
+              value={this.state.last_name}
+              name="last_name"
+              placeholder="Last Name"
+              type="text"
+            />
+            <div style={{ fontSize: 12, color: "red" }}></div>
             <TextField
               id="login_field"
               required
@@ -85,19 +102,13 @@ class Login extends Component {
             <div style={{ fontSize: 12, color: "red" }}></div>
 
             <Button type="submit" className="login-button" variant="contained">
-              Login
-            </Button>
-          </form>
-          <p>Log in to edit records</p>
-          <br/>
-          <Button  className="login-button" variant="contained" onClick={() => window.location.replace("/SignUp")}>
               Sign Up
             </Button>
-          <p>Sign up if you are a new user</p>
+          </form>
         </Container>
       </div>
     );
   }
 }
 
-export default Login;
+export default SignUp;
