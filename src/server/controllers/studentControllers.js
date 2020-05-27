@@ -1,14 +1,15 @@
 // const data = require("../../../src/behaviorState/nonPreferredBehaviors.json");
 const pool = require("../sql database/dbconnect");
 
+// const getAllStudentsById = (req, res)
+//remember that when you want to connect student to teacher, connect student with teacher's 'insertId'
+
 const getAllStudents = (req, res) => {
   pool.query("SELECT * FROM behavior_app_sql_db.students", (err, rows) => {
     res.json([...rows]);
   });
 };
 
-// const getAllStudentsById = (req, res)
-//remember that when you want to connect student to teacher, connect student with teacher's 'insertId'
 const createNewStudent = (req, res) => {
   const {
     student_id,
