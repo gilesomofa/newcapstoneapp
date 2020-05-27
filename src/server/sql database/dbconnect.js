@@ -8,7 +8,8 @@ class Connection {
         connectionLimit: 100,
         host: "35.223.184.144",
         user: "root",
-        password: "Guillendubois123",
+        //move to .env before deploy
+        password: "Bomboclawt",
         database: "behavior_app_sql_db",
       });
       console.log("connected to database");
