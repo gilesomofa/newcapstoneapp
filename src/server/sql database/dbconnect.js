@@ -9,7 +9,7 @@ class Connection {
         host: "35.223.184.144",
         user: "root",
         //move to .env before deploy
-        password: "Bomboclawt",
+        password: "Bomboclawt5000",
         database: "behavior_app_sql_db",
       });
       console.log("connected to database");

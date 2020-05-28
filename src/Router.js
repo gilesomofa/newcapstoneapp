@@ -5,6 +5,7 @@ import Students from "./components/Students";
 import BehaviorForm from "./components/BehaviorForm";
 import Admin from "./components/Admin";
 import SignUp from "./components/SignUpForm";
+
 const nonPreferredBehaviors = require("./behaviorState/nonPreferredBehaviors.json");
 const preferredBehaviors = require("./behaviorState/preferredBehaviors.json");
 
@@ -15,7 +16,7 @@ const Router = () => {
       <Route path="/SignUp" component={SignUp} />
       <Route path="/Admin" component={Admin} />
     </Switch>
-  );
+  ); 
 };
 
 export default Router;

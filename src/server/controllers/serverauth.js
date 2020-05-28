@@ -2,7 +2,7 @@ const mysql = require("mysql");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const pool = require("../sql/connection");
-const { handleSQLError } = require("../sql/error");
+const { handleDataBaseError } = require("../sql/dberrors");
 
 // // for bcrypt I used 100 to increase security since students are minors and the program is federally
 //protected It's best to be as secure as possible without comprimising user experience
@@ -28,7 +28,7 @@ const signup = (req, res) => {
           return res
             .status(409)
             .send("There is already an account associated with this email");
-        return handleSQLError(res, err);
+        return handleDataBaseError(res, err);
       }
       return res.send("Thanks for becoming a part of the Daily Sped community");
     });
@@ -41,7 +41,7 @@ const login = (req, res) => {
   sql = mysql.format(sql, [email]);
 
   pool.query(sql, (err, rows) => {
-    if (err) return handleSQLError(res, err);
+    if (err) return handleDataBaseError(res, err);
     if (!rows.length) return res.status(404).send("No matching users");
 
     const hash = rows[0].password;
