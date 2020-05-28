@@ -1,19 +1,16 @@
 // const data = require("../../../src/behaviorState/nonPreferredBehaviors.json");
 const pool = require("../sql database/dbconnect");
-const {handleDataBaseError} = require("../sql database/dberrors");
-
+const { handleDataBaseError } = require("../sql database/dberrors");
 
 // const getAllStudentsById = (req, res)
 //remember that when you want to connect student to teacher, connect student with teacher's 'insertId'
 
 const getAllStudents = (req, res) => {
   pool.query("SELECT * FROM behavior_app_sql_db.students", (err, rows) => {
-    if(err) {
+    if (err) {
       return handleDataBaseError(res, err);
-      
-
     }
-     res.json([...rows]);
+    res.json([...rows]);
   });
 };
 
@@ -43,4 +40,3 @@ const createNewStudent = (req, res) => {
 };
 
 module.exports = { getAllStudents, createNewStudent };
- 

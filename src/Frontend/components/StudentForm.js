@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { createStudent } from "../actions/studentActions";
-import { fetchStudents } from "../actions/studentActions";
+import { createStudent } from "../Redux/actions/studentActions";
+import { fetchStudents } from "../Redux/actions/types"
 
 
 class StudentForm extends Component {
@@ -11,7 +11,7 @@ class StudentForm extends Component {
     this.state = {
       classroom_id: "",
       firstname: "",
-      lastname: ""
+      lastname: "",
     };
 
     this.onChange = this.onChange.bind(this);
@@ -24,17 +24,16 @@ class StudentForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    
+
     const student = {
       classroom_id: this.state.classroom_id,
       student_firstname: this.state.firstname,
-      student_lastname: this.state.lastname
+      student_lastname: this.state.lastname,
     };
 
     this.props.createStudent(student);
     console.log(student);
     window.location.reload();
-
   }
   render() {
     return (
@@ -57,7 +56,7 @@ class StudentForm extends Component {
             <label>Student Firstname: </label>
             <br />
             <textarea
-              name="firstname" 
+              name="firstname"
               onChange={this.onChange}
               value={this.state.firstname}
             />
@@ -66,7 +65,7 @@ class StudentForm extends Component {
             <label>Student Last Name: </label>
             <br />
             <textarea
-              name="lastname" 
+              name="lastname"
               onChange={this.onChange}
               value={this.state.lastname}
             />
@@ -83,4 +82,4 @@ StudentForm.propTypes = {
   createStudent: PropTypes.func.isRequired,
 };
 
-export default connect(null, {  createStudent })(StudentForm);
+export default connect(null, { createStudent })(StudentForm);

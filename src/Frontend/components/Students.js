@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchStudents } from "../actions/studentActions";
+import { fetchStudents } from "../Redux/actions/studentActions";
 import BehaviorModal from "./BehaviorModal";
 
 class Students extends Component {

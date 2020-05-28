@@ -4,10 +4,9 @@ import { connect } from "react-redux";
 import {
   createPreferredBehavior,
   createNonPreferredBehavior,
-} from "../actions/behaviorActions";
+} from "../Redux/actions/behaviorActions";
 
-const nonPreferredBehaviors = require("../behaviorState/nonPreferredBehaviors.json");
-const preferredBehaviors = require("../behaviorState/preferredBehaviors.json");
+const nonPreferredBehaviors = require("../Redux/behaviorState/nonPreferredBehaviors.json");
 
 class BehaviorForm extends Component {
   constructor(props) {

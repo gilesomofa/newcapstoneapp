@@ -47,7 +47,6 @@ class Login extends Component {
         <h1>Daily Behavior Report Card</h1>
         <Container maxWidth="lg" className="Login-Container">
           <form className="login-form" onSubmit={this.login}>
-            
             <TextField
               id="login_field"
               required
@@ -89,10 +88,14 @@ class Login extends Component {
             </Button>
           </form>
           <p>Log in to edit records</p>
-          <br/>
-          <Button  className="login-button" variant="contained" onClick={() => window.location.replace("/SignUp")}>
-              Sign Up
-            </Button>
+          <br />
+          <Button
+            className="login-button"
+            variant="contained"
+            onClick={() => window.location.replace("/SignUp")}
+          >
+            Sign Up
+          </Button>
           <p>Sign up if you are a new user</p>
         </Container>
       </div>

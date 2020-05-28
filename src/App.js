@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "../src/Frontend/Redux/store";
 
-import Router from "./Router";
+import Router from "../src/Frontend/components/Router";
 import { BrowserRouter } from "react-router-dom";
 
 document.addEventListener("DOM.contentLoaded", function () {});

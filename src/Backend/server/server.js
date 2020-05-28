@@ -3,13 +3,13 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 dotenv.config();
-const getStudentsRouter = require("./src/server/routes/index");
-const teachersRouter = require("./src/server/routes/teacherRoutes");
+const getStudentsRouter = require("./routes/index");
+const teachersRouter = require("./routes/teacherRoutes");
 
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4001;
 
 app.use(cors());
 app.use((req, res, next) => {

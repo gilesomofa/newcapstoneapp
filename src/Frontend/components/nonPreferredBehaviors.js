@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import BehaviorCheckbox from "./BehaviorCheckbox";
 
-const nonPreferredBehaviors = require("../behaviorState/nonPreferredBehaviors.json");
-const preferredBehaviors = require("../behaviorState/preferredBehaviors.json");
+const nonPreferredBehaviors = require("../Redux/behaviorState/nonPreferredBehaviors.json");
+const preferredBehaviors = require("../Redux/behaviorState/preferredBehaviors.json");
 
 class NonPreferredBehaviors extends React.Component {
   constructor(props) {
