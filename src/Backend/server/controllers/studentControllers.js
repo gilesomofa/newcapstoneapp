@@ -2,9 +2,6 @@
 const pool = require("../sql database/dbconnect");
 const { handleDataBaseError } = require("../sql database/dberrors");
 
-// const getAllStudentsById = (req, res)
-//remember that when you want to connect student to teacher, connect student with teacher's 'insertId'
-
 const getAllStudents = (req, res) => {
   pool.query("SELECT * FROM behavior_app_sql_db.students", (err, rows) => {
     if (err) {
