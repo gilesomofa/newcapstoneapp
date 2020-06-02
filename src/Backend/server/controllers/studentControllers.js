@@ -31,7 +31,7 @@ const createNewStudent = (req, res) => {
       classroom_id +
       ") ",
     (err, rows) => {
-      res.send(row);
+      res.send(rows);
     }
   );
 };
