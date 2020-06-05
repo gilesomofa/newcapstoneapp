@@ -6,6 +6,7 @@ class Connection {
       console.log("db is winding up");
       this.pool = mysql.createPool({
         connectionLimit: 100,
+        // host: "35.232.233.63",
         host: "35.223.184.144",
         user: "root",
         //move to .env before deploy

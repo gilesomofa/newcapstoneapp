@@ -1,5 +1,5 @@
 // const data = require("../../../src/behaviorState/nonPreferredBehaviors.json");
-const pool = require("../sql database/dbconnect");
+// const pool = require("../sql database/dbconnect");
 const { handleDataBaseError } = require("../sql database/dberrors");
 
 const getAllStudents = (req, res) => {
