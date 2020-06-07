@@ -16,12 +16,10 @@ class Students extends Component {
   }
 
   render() {
-    console.log(this.props.students);
-    let x = Object.entries(this.props.students);
-    console.log(x);
+    
     const studentItems = this.props.students.map((student) => (
-      <div className="StudentCard">
-        <ul key={student.student_id} className="Student-List">
+      <div className="StudentCard" key={student.student_id}>
+        <ul  className="Student-List">
           <li>
             Student Id: {student.student_id}
             <br />

@@ -1,7 +1,7 @@
 import { FETCH_STUDENTS, NEW_STUDENT } from "./types";
 
 export const fetchStudents = () => (dispatch) => {
-  fetch("http://localhost:4001/admin", {
+  fetch("http://localhost:8080/admin", {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -17,7 +17,7 @@ export const fetchStudents = () => (dispatch) => {
 };
 
 export const createStudent = (studentData) => (dispatch) => {
-  fetch("http://localhost:4001/admin/students", {
+  fetch("http://localhost:8080/admin/students", {
     method: "POST",
     headers: {
       "content-type": "application/json",
