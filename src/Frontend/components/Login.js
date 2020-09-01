@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router";
 import { TextField, Button, Container } from "@material-ui/core";
-
+import { Redirect } from "react-router-dom";
 const initialState = {
   first_name: "",
   last_name: "",
   email: "",
   password: "",
   pin: "",
+  loggedIn: false,
 };
 class Login extends Component {
   state = initialState;
@@ -33,7 +33,19 @@ class Login extends Component {
   login = (event) => {
     event.preventDefault();
     if (this.validate()) {
-      window.location.replace("/Admin");
+      fetch("https://localhost:5000/login", {
+        method: "Post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          teacher_email: this.state.email,
+          teacher_pin: this.state.teacher_pin,
+          teacher_password: this.state.teacher_password,
+        }),
+      });
+      this.setState({ loggedIn: true });
+      // this.props.history.replace("/Admin");
       document.cookie = `loggedIn=true;max-age=60*20000`;
       // set loggedIn = true and max-age = 60*20000 (twenty minutes)
       // clear form
@@ -42,7 +54,9 @@ class Login extends Component {
   };
 
   render() {
-    return (
+    return this.state.loggedIn ? (
+      <Redirect to="/Admin" />
+    ) : (
       <div className="Login">
         <h1>Daily Behavior Report Card</h1>
         <Container maxWidth="lg" className="Login-Container">

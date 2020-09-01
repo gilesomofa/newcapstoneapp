@@ -34,7 +34,7 @@
     "thunk": "0.0.1"
   },
   "scripts": {
-    "start": "node server2.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

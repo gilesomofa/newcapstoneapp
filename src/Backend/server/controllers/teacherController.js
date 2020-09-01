@@ -1,7 +1,7 @@
 const pool = require("../sql database/dbconnect");
 
 const signUp = (req, res) => {
-  // res.json({signupcranked:req.body});
+  res.json({signupcranked:req.body});
   const {
     teacher_id,
     teacher_pin,
@@ -28,7 +28,7 @@ const signUp = (req, res) => {
 };
 
 const login = (req, res) => {
-  // res.json({ loginworks: req.body });
+  res.json({ loginworks: req.body });
   const {
     teacher_email,
     teacher_pin,
@@ -36,7 +36,7 @@ const login = (req, res) => {
   } = req.body;
 
 pool.query("SELECT * FROM teachers WHERE teacher_email = '" + teacher_email + "'  AND teacher_pin = '" + teacher_pin + "'",(err, rows) => {
-  res.send(rows[0]);
+  res.send("hello world");
 } 
 );
 };

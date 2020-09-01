@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-dotenv.config({path: "./config.env"});
+dotenv.config({ path: "./config.env" });
 
 const getStudentsRouter = require("./src/Backend/server/routes/index");
 const teachersRouter = require("./src/Backend/server/routes/teacherRoutes");
@@ -21,10 +21,13 @@ app.use((req, res, next) => {
   );
   next();
 });
-app.use(express.static("build"))
+app.use(express.static("build"));
 app.use(bodyParser.json());
 app.use(express.json());
-app.use("/admin", getStudentsRouter);
-app.use("/", teachersRouter);
+app.get("/get", (req, res) => {
+  res.send("por favor");
+}),
+  // app.use("/admin", getStudentsRouter);
+  app.use("/", teachersRouter);
 
 app.listen(port, () => console.log(`${port} app is running`));

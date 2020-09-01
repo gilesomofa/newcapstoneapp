@@ -22,7 +22,7 @@ const createNewBehavior = (req, res) => {
     student_non_preferred_behavior,
     student_non_preferred_behavior,
     classroom_id,
-    teahcer_id,
+    teacher_id,
   } = req.body;
 
   pool.query(

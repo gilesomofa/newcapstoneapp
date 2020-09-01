@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-dotenv.config({path: "./config.env"});
+dotenv.config({ path: "./config.env" });
 
 const getStudentsRouter = require("./routes/index");
 const teachersRouter = require("./routes/teacherRoutes");
@@ -10,7 +10,7 @@ const teachersRouter = require("./routes/teacherRoutes");
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use((req, res, next) => {
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   );
   next();
 });
-app.use(express.static("build"))
+app.use(express.static("build"));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use("/admin", getStudentsRouter);
