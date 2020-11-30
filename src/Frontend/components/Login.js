@@ -32,8 +32,11 @@ class Login extends Component {
 
   login = (event) => {
     event.preventDefault();
+    console.log('hello world I am a login')
+    if(!this.validate()){alert('check your inputs, something is wrong')
+  } else
     if (this.validate()) {
-      fetch("https://localhost:5000/login", {
+      fetch("http://localhost:8080/login", {
         method: "Post",
         headers: {
           "Content-Type": "application/json",
@@ -45,9 +48,9 @@ class Login extends Component {
         }),
       });
       this.setState({ loggedIn: true });
-      // this.props.history.replace("/Admin");
+      this.props.history.replace("/Admin");
       document.cookie = `loggedIn=true;max-age=60*20000`;
-      // set loggedIn = true and max-age = 60*20000 (twenty minutes)
+      //set loggedIn = true and max-age = 60*20000 (twenty minutes)
       // clear form
     }
     this.setState(initialState);

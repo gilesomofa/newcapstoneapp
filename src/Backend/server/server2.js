@@ -10,7 +10,7 @@ const teachersRouter = require("./routes/teacherRoutes");
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use((req, res, next) => {
@@ -27,7 +27,8 @@ app.use(express.json());
 app.get("/get", (req, res) => {
   res.send("por favor");
 }),
-  app.use("/admin", getStudentsRouter);
-  app.use("/", teachersRouter);
+  app.use("/admin", getStudentsRouter )
+  app.use("/", (req,res) => {
+    res.json({msg:"this is where your fucknots should be entering"});});
 
 app.listen(port, () => console.log(`${port} app is running`));

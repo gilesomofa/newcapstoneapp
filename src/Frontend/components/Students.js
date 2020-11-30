@@ -5,7 +5,7 @@ import { fetchStudents } from "../Redux/actions/studentActions";
 import BehaviorModal from "./BehaviorModal";
 
 class Students extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchStudents();
   }
 

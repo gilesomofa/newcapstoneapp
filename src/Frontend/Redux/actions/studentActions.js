@@ -1,13 +1,15 @@
 import { FETCH_STUDENTS, NEW_STUDENT } from "./types";
 
 export const fetchStudents = () => (dispatch) => {
-  fetch("http://localhost:5000/admin", {
+  console.log('I am fetching from local json now')
+  fetch("./Redux/studentState.json", {
     method: "GET",
     headers: {
       "content-type": "application/json",
     },
   })
     .then((res) => res.json())
+    .then((res) => (console.log('we are comming')))
     .then((students) =>
       dispatch({
         type: FETCH_STUDENTS,
@@ -17,7 +19,7 @@ export const fetchStudents = () => (dispatch) => {
 };
 
 export const createStudent = (studentData) => (dispatch) => {
-  fetch("http://localhost:5000/admin/students", {
+  fetch("http://localhost:8080/admin/students", {
     method: "POST",
     headers: {
       "content-type": "application/json",

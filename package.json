@@ -13,7 +13,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.0",
-    "concurrently": "^5.2.0",
+    "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -38,7 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon server2"
+    "server": "concurrently \"react-scripts start\" \"src/Backend/server/server2\""
   },
   "eslintConfig": {
     "extends": "react-app"

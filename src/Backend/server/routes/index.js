@@ -4,7 +4,7 @@ const { getAllStudents, createNewStudent } = require("../controllers/studentCont
 
 //the following routes are being written with hopes of expanding features of app in future
 
-router.get("/", getAllStudents);
+router.get("/", getAllStudents );
 router.post("/students", createNewStudent);
 
 
