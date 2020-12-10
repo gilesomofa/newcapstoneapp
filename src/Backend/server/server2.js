@@ -1,16 +1,20 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+const config = require('config')
 const dotenv = require("dotenv");
+const connectDB = require("./mongo/db");
 dotenv.config({ path: "./config.env" });
-
 const getStudentsRouter = require("./routes/index");
 const teachersRouter = require("./routes/teacherRoutes");
 
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 8080;
+//connect Mongo DB
+connectDB();
+const port = process.env.PORT || 5000;
+console.log('eureka balzac')
 
 app.use(cors());
 app.use((req, res, next) => {
@@ -29,6 +33,6 @@ app.get("/get", (req, res) => {
 }),
   app.use("/admin", getStudentsRouter )
   app.use("/", (req,res) => {
-    res.json({msg:"this is where your fucknots should be entering"});});
+    res.json({msg:"this is where your cognots should be entering"});});
 
 app.listen(port, () => console.log(`${port} app is running`));

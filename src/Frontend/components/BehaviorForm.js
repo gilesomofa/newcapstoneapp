@@ -85,3 +85,8 @@ export default connect(null, {
   createNonPreferredBehavior,
   createPreferredBehavior,
 })(BehaviorForm);
+
+//when teacher is editing record, there should be an automatic timeout with prompt to continue after 2 minutes 
+// to prevent people reading records. There should also be a mode where teacher can turn this off while 
+//editing for extended period. This should be designed with some sort of failsafe to return to timeout mode with
+// promt after a certain period of time. Like the behavior netflix uses when it checks if you are still watching  

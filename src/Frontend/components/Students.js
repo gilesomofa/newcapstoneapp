@@ -9,12 +9,12 @@ class Students extends Component {
     this.props.fetchStudents();
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     if (nextProps.newstudent) {
       this.props.students.unshift(nextProps.newStudent);
     }
   }
-
+//for security, students names should not appear in browser when being edited, perhaps initials or student id
   render() {
     
     const studentItems = this.props.students.map((student) => (
@@ -50,3 +50,5 @@ const mapStateToProps = (state) => ({
   newStudent: state.students.item,
 });
 export default connect(mapStateToProps, { fetchStudents })(Students);
+
+
